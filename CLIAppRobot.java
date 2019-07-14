@@ -27,6 +27,20 @@ public class CLIAppRobot{
           break;
         }
      }
-    System.out.println("input: " + output);
+    System.out.println("input: " + args[0]);
+    System.out.println("output: " + "("+ x +", "+ y +")" );
   }
+  // public static function that check string is Integer
+  public static boolean isNumeric(String strNum) {
+    // try first
+    try {
+        int d = Integer.parseInt(strNum);
+    }
+    // if try failed
+    catch (NumberFormatException | NullPointerException nfe) {
+        return false;
+    }
+    return true;
+  }
+
 }
