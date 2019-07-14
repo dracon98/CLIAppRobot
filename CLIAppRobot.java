@@ -20,7 +20,12 @@ public class CLIAppRobot{
        String cd = ch.substring(0, 1);
        cd.toUpperCase();
         if (cd.equals("R") || cd.equals("L") || cd.equals("F") || cd.equals("B")){
-           System.out.println("input: " + cd);
+           System.out.println("command: " + cd);
+           String number = ch.substring(1, ch.length());
+
+           if (isNumeric(number)){
+               System.out.println("number: " + number);
+           }
         }
         else{
           output = "Command Error";
