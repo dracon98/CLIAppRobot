@@ -4,6 +4,12 @@ import java.util.List;
 
 public class CLIAppRobot{
   public static void main(String[] args){
+    // parameter
+    int x = 0; // x location (mapping)
+    int y = 0; // y location (mapping)
+    int state = 0; // for the direction of the robot || 0 = normal (front), 1 = right, 2 = back, 3 = left
+    String output = "";
+
     // remove the first and the last quatation
     String text = args[0].substring(1, args[0].length() - 1);
     // split comma into array list
@@ -11,7 +17,7 @@ public class CLIAppRobot{
     StringBuilder sb = new StringBuilder();
     // combining array into a single StringBuilder
      for (String ch : items) {
-       sb.append(ch);
+
      }
     System.out.println("input: " + sb);
   }
