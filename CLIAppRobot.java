@@ -11,7 +11,7 @@ public class CLIAppRobot{
     String output = "";
 
     // remove the first and the last quatation
-    String text = args[0].substring(1, args[0].length() - 1);
+    String text = args[0].replace("\'","");
     // split comma into array list
     List<String> items = Arrays.asList(text.split("\\s*,\\s*"));
     StringBuilder sb = new StringBuilder();
@@ -97,8 +97,8 @@ public class CLIAppRobot{
           break;
         }
       }
-    System.out.println("input: " + args[0]);
-    System.out.println("output: " + "("+ x +", "+ y +")");
+    System.out.println("Inputs: -" + args[0]);
+    System.out.println("Outputs: - the minimum amount of distance to get back to the starting point is " + (Math.abs(x) + Math.abs(y)));
   }
   // public static function that check string is Integer
   public static boolean isNumeric(String strNum) {
