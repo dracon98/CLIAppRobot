@@ -3,7 +3,7 @@
 - Open Command Prompt 
 - Direct your command prompt to the folder that has the application 
 - Type 'javac <application name/ class of the application>' in this case 'javac CLIAppRobot' and Enter
-- Type 'java <application name/ class of application> <Input>' input would be <command><number> in string.
+- Type 'java <application name/ class of application> <command>' input would be <command><number> in string.
 # There are 4 types of COMMAND. 
 - 'F' - move forward 1 unit - 'B' - move backward 1 unit 
 - 'R' - turn right 90 degrees - 'L' - turn left 90 degrees
