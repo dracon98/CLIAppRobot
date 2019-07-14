@@ -75,6 +75,17 @@ public class CLIAppRobot{
                    state = state - 4;
                  }
                }
+               else if (cd.equals("L")){
+                 // the same with turn right, but state minus by 1
+                 for (int i = 0; i < num; i++){
+                   state = state - 1;
+                 }
+                 // because we dont want this to be minus, we add state by + 4 (4 side of rotation)
+                 while (state < 0){
+                   // ex -5 + 4 = -1 + 4 = 3 || -5 == 3
+                   state = state + 4;
+                 }
+               }
              }
              else{
                output = "Number Error";
@@ -87,7 +98,7 @@ public class CLIAppRobot{
         }
       }
     System.out.println("input: " + args[0]);
-    System.out.println("output: " + "("+ x +", "+ y +")" );
+    System.out.println("output: " + "("+ x +", "+ y +")");
   }
   // public static function that check string is Integer
   public static boolean isNumeric(String strNum) {
