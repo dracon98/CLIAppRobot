@@ -17,8 +17,16 @@ public class CLIAppRobot{
     StringBuilder sb = new StringBuilder();
     // combining array into a single StringBuilder
      for (String ch : items) {
-       System.out.println("items: " + ch);
+       String cd = ch.substring(0, 1);
+       cd.toUpperCase();
+        if (cd.equals("R") || cd.equals("L") || cd.equals("F") || cd.equals("B")){
+           System.out.println("input: " + cd);
+        }
+        else{
+          output = "Command Error";
+          break;
+        }
      }
-    System.out.println("input: " + sb);
+    System.out.println("input: " + output);
   }
 }
