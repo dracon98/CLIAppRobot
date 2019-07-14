@@ -26,21 +26,27 @@ public class CLIAppRobot{
                System.out.println("number: " + number);
                int num = Integer.parseInt(number);
                if (cd.equals("F")){
+                 //from 0 to the <number>, the robot move forward depending on the state of the robot
                  for (int i = 0; i < num; i++){
+                   // front/ north
                    if (state == 0){
                      y = y + 1;
                    }
+                   // right/ east
                    else if (state == 1){
                      x = x + 1;
                    }
+                   // left/ west
                    else if (state == 2){
                      y = y - 1;
                    }
+                   // down/ bottom/ south
                    else if (state == 3){
                      x = x - 1;
                    }
                  }
                }
+               // the same with forward but the way it moves is completely opposite
                else if (cd.equals("B")){
                  for (int i = 0; i < num; i++){
                    if (state == 0){
@@ -55,6 +61,18 @@ public class CLIAppRobot{
                    else if (state == 3){
                      x = x + 1;
                    }
+                 }
+               }
+               else if (cd.equals("R")){
+                 // the same as Forward and Backward but in here, the state is added because its clockwise
+                 for (int i = 0; i < num; i++){
+                   state = state + 1;
+                 }
+                 // since the state only has 4 side which are 0,1,2,3
+                 // if state > 3 this will do a loop
+                 while (state > 3){
+                   // in here, -4 means that the state will become 0 which is the front
+                   state = state - 4;
                  }
                }
              }
