@@ -25,6 +25,23 @@ public class CLIAppRobot{
 
            if (isNumeric(number)){
                System.out.println("number: " + number);
+               int num = Integer.parseInt(number);
+               if (cd.equals("F")){
+                 for (int i = 0; i < num; i++){
+                   if (state == 0){
+                     y = y + 1;
+                   }
+                   else if (state == 1){
+                     x = x + 1;
+                   }
+                   else if (state == 2){
+                     y = y - 1;
+                   }
+                   else if (state == 3){
+                     x = x - 1;
+                   }
+                 }
+               }
            }
         }
         else{
