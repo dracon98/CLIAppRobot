@@ -17,7 +17,7 @@ public class CLIAppRobot{
     StringBuilder sb = new StringBuilder();
     // combining array into a single StringBuilder
      for (String ch : items) {
-
+       System.out.println("items: " + ch);
      }
     System.out.println("input: " + sb);
   }
