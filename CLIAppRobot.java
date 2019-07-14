@@ -18,9 +18,8 @@ public class CLIAppRobot{
     // combining array into a single StringBuilder
      for (String ch : items) {
        String cd = ch.substring(0, 1);
-       cd.toUpperCase();
+       cd = cd.toUpperCase();
         if (cd.equals("R") || cd.equals("L") || cd.equals("F") || cd.equals("B")){
-           System.out.println("command: " + cd);
            String number = ch.substring(1, ch.length());
 
            if (isNumeric(number)){
@@ -42,13 +41,33 @@ public class CLIAppRobot{
                    }
                  }
                }
+               else if (cd.equals("B")){
+                 for (int i = 0; i < num; i++){
+                   if (state == 0){
+                     y = y - 1;
+                   }
+                   else if (state == 1){
+                     x = x - 1;
+                   }
+                   else if (state == 2){
+                     y = y + 1;
+                   }
+                   else if (state == 3){
+                     x = x + 1;
+                   }
+                 }
+               }
+             }
+             else{
+               output = "Number Error";
+               break;
+             }
            }
-        }
         else{
           output = "Command Error";
           break;
         }
-     }
+      }
     System.out.println("input: " + args[0]);
     System.out.println("output: " + "("+ x +", "+ y +")" );
   }
