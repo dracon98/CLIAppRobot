@@ -9,6 +9,7 @@ public class CLIAppRobot{
     int y = 0; // y location (mapping)
     int state = 0; // for the direction of the robot || 0 = normal (front), 1 = right, 2 = back, 3 = left
     String output = "";
+    String separator = "";
 
     // remove the first and the last quatation
     String text = args[0].replace("\'","");
@@ -23,7 +24,6 @@ public class CLIAppRobot{
            String number = ch.substring(1, ch.length());
 
            if (isNumeric(number)){
-               System.out.println("number: " + number);
                int num = Integer.parseInt(number);
                if (cd.equals("F")){
                  //from 0 to the <number>, the robot move forward depending on the state of the robot
@@ -86,6 +86,9 @@ public class CLIAppRobot{
                    state = state + 4;
                  }
                }
+               sb.append(separator);
+               sb.append(cd+""+num);
+               separator = ",";
              }
              else{
                output = "Number Error";
@@ -97,7 +100,7 @@ public class CLIAppRobot{
           break;
         }
       }
-    System.out.println("Inputs: -" + args[0]);
+    System.out.println("Inputs: - " + "\'"+ sb + "\'");
     System.out.println("Outputs: - the minimum amount of distance to get back to the starting point is " + (Math.abs(x) + Math.abs(y)));
   }
   // public static function that check string is Integer
